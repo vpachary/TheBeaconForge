@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Beacon Forge — Atelier of Digital Flagships & Web Craftsmanship</title>
-  <meta name="description" content="The Beacon Forge is a bespoke web design and digital engineering atelier. Crafting high-converting, luminous digital flagships for ambitious businesses. Launching 2026.">
+  <title>The Beacon Forge — Atelier of Digital Flagships</title>
+  <meta name="description" content="The Beacon Forge is a bespoke web design and digital engineering atelier. Crafting high-converting, luminous digital flagships for ambitious businesses. Unveiling 2026.">
   <meta name="keywords" content="web agency, bespoke web design, digital atelier, digital flagship, high conversion website, luxury web design, The Beacon Forge">
   <meta name="author" content="The Beacon Forge">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
-  <!-- Open Graph / Social Meta -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://thebeaconforge.com/">
   <meta property="og:title" content="The Beacon Forge — Atelier of Digital Flagships">
-  <meta property="og:description" content="Forging timeless digital architecture and high-converting web experiences. Launching 2026.">
+  <meta property="og:description" content="Where luminous clarity meets master craftsmanship. Launching 2026.">
   <meta property="og:image" content="favicon.svg">
 
-  <!-- Google Fonts: Cormorant Garamond (Editorial Serif), Plus Jakarta Sans (Modern Sans), Space Mono (Architectural Mono) -->
+  <!-- Google Fonts: Cormorant Garamond, Plus Jakarta Sans, Space Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -33,413 +33,133 @@
   <!-- Ambient Beacon Cursor Light -->
   <div class="beacon-torch" id="beaconTorch" aria-hidden="true"></div>
 
-  <!-- Main Container -->
-  <div class="page-wrapper">
+  <!-- Single Screen Layout Wrapper -->
+  <div class="viewport-frame">
     
-    <!-- Top Bar / Masthead -->
-    <header class="masthead" role="banner">
-      <div class="masthead-inner">
-        
-        <!-- Brand Crest & Monogram -->
-        <a href="#hero" class="brand-crest" aria-label="The Beacon Forge Home">
-          <div class="crest-symbol" aria-hidden="true">
-            <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M22 4L26.5 16H17.5L22 4Z" fill="#F3D59B"/>
-              <circle cx="22" cy="18" r="2.5" fill="#FFF8EB"/>
-              <path d="M14 26H30L28 30H16L14 26Z" fill="#C89666"/>
-              <path d="M12 30H32L34 38H10L12 30Z" stroke="#E5C386" stroke-width="1.2" fill="#1C1E24"/>
-              <line x1="8" y1="39" x2="36" y2="39" stroke="#E5C386" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="22" y1="4" x2="22" y2="1" stroke="#F3D59B" stroke-width="1.2" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="brand-typography">
-            <span class="brand-title">THE BEACON FORGE</span>
-            <span class="brand-subtitle">ATELIER &bull; EST. 2026</span>
-          </div>
-        </a>
+    <!-- Top Header -->
+    <header class="masthead">
+      <div class="brand-crest">
+        <div class="crest-symbol" aria-hidden="true">
+          <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22 4L26.5 16H17.5L22 4Z" fill="#F3D59B"/>
+            <circle cx="22" cy="18" r="2.5" fill="#FFF8EB"/>
+            <path d="M14 26H30L28 30H16L14 26Z" fill="#C89666"/>
+            <path d="M12 30H32L34 38H10L12 30Z" stroke="#E5C386" stroke-width="1.2" fill="#1C1E24"/>
+            <line x1="8" y1="39" x2="36" y2="39" stroke="#E5C386" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="22" y1="4" x2="22" y2="1" stroke="#F3D59B" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="brand-typography">
+          <span class="brand-title">THE BEACON FORGE</span>
+          <span class="brand-subtitle">ATELIER OF DIGITAL FLAGSHIPS</span>
+        </div>
+      </div>
 
-        <!-- Live Status Pill -->
+      <div class="masthead-meta">
         <div class="status-indicator">
           <span class="status-dot"></span>
-          <span class="status-text">FORGE STATUS: <strong class="gold-text">COMMISSIONING</strong></span>
-          <span class="status-divider">&vert;</span>
-          <span class="clock-display" id="liveClock">00:00:00 UTC</span>
+          <span class="status-text">FORGE COMMISSIONING</span>
         </div>
-
-        <!-- Right Controls -->
-        <div class="masthead-actions">
-          <button id="soundToggle" class="icon-button" aria-label="Toggle atmospheric sound" title="Atmospheric sound">
-            <svg class="icon-speaker" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M11 5L6 9H2v6h4l5 4V5z"/>
-              <path class="sound-wave" d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
-              <path class="sound-wave-2" d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
-            </svg>
-            <span class="sound-label">SOUND: OFF</span>
-          </button>
-          
-          <a href="#reserve-section" class="btn btn-outline" id="btnInquire">
-            <span>Request Dossier</span>
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
-        </div>
+        <div class="clock-display" id="liveClock">00:00:00 UTC</div>
       </div>
     </header>
 
-    <!-- Main Content Area -->
-    <main id="main-content" class="main-content">
+    <!-- Center Hero -->
+    <main class="hero-stage">
       
-      <!-- HERO SECTION -->
-      <section class="hero-section" id="hero">
-        <div class="hero-container">
-          
-          <!-- Editorial Label -->
-          <div class="editorial-badge">
-            <span class="badge-ornament">&sect;</span>
-            <span class="badge-text">PROCLAMATION &bull; THE NEW STANDARD OF DIGITAL ARCHITECTURE</span>
-            <span class="badge-ornament">&sect;</span>
+      <!-- Issue Label -->
+      <div class="editorial-badge">
+        <span class="badge-dot">&#9670;</span>
+        <span class="badge-text">COMING SPRING 2026 // PRIVATE PREVIEW INITIATION</span>
+        <span class="badge-dot">&#9670;</span>
+      </div>
+
+      <!-- Headline -->
+      <h1 class="hero-headline">
+        Where luminous <em class="serif-italic">clarity</em> meets master <em class="serif-italic gold-gradient">craftsmanship.</em>
+      </h1>
+
+      <!-- Manifesto Subtitle -->
+      <p class="hero-subtext">
+        We forge bespoke digital architectures and high-converting web experiences for businesses that refuse to settle for generic templates.
+      </p>
+
+      <!-- Horological Launch Counter -->
+      <div class="countdown-module">
+        <div class="countdown-grid">
+          <div class="countdown-card">
+            <span class="count-value" id="countDays">48</span>
+            <span class="count-unit">DAYS</span>
           </div>
-
-          <!-- Hero Headline -->
-          <h1 class="hero-headline">
-            Where luminous <em class="serif-italic">clarity</em> meets master <em class="serif-italic gold-gradient">craftsmanship.</em>
-          </h1>
-
-          <!-- Hero Subtitle / Philosophy -->
-          <p class="hero-manifesto">
-            The Beacon Forge crafts bespoke digital flagships and high-conversion web architectures for businesses that demand authority. No disposable templates. No synthetic shortcuts. Only enduring digital supremacy.
-          </p>
-
-          <!-- Launch Timeline & Flip Counter -->
-          <div class="countdown-module" aria-label="Countdown to official reveal">
-            <div class="countdown-header">
-              <span class="countdown-title">UNVEILING INITIATION IN</span>
-              <span class="countdown-target">SPRING 2026 // PRIVATE PREVIEW PHASE</span>
-            </div>
-            
-            <div class="countdown-grid">
-              <div class="countdown-card">
-                <div class="count-value" id="countDays">48</div>
-                <div class="count-unit">DAYS</div>
-              </div>
-              <div class="countdown-separator">:</div>
-              <div class="countdown-card">
-                <div class="count-value" id="countHours">14</div>
-                <div class="count-unit">HOURS</div>
-              </div>
-              <div class="countdown-separator">:</div>
-              <div class="countdown-card">
-                <div class="count-value" id="countMinutes">32</div>
-                <div class="count-unit">MINS</div>
-              </div>
-              <div class="countdown-separator">:</div>
-              <div class="countdown-card">
-                <div class="count-value" id="countSeconds">08</div>
-                <div class="count-unit">SECS</div>
-              </div>
-            </div>
+          <span class="countdown-colon">:</span>
+          <div class="countdown-card">
+            <span class="count-value" id="countHours">14</span>
+            <span class="count-unit">HOURS</span>
           </div>
-
-          <!-- Interactive Early Access Dispatch Box -->
-          <div class="reservation-card" id="reserve-section">
-            <div class="reservation-card-glow"></div>
-            <div class="reservation-inner">
-              <div class="reservation-heading">
-                <h3>Request Private Dossier &amp; Priority Access</h3>
-                <p>Register your interest for our limited founding client cohort (Q2 2026). Strictly 4 commissions accepted per cycle.</p>
-              </div>
-
-              <form id="waitlistForm" class="waitlist-form" novalidate>
-                <div class="project-tags-selector" role="group" aria-label="Select your interest">
-                  <span class="tag-instruction">Select Scope:</span>
-                  <label class="tag-chip">
-                    <input type="radio" name="projectType" value="Digital Flagship" checked>
-                    <span>Digital Flagship</span>
-                  </label>
-                  <label class="tag-chip">
-                    <input type="radio" name="projectType" value="Brand Re-architecture">
-                    <span>Brand Re-architecture</span>
-                  </label>
-                  <label class="tag-chip">
-                    <input type="radio" name="projectType" value="High-Conversion System">
-                    <span>High-Conversion System</span>
-                  </label>
-                </div>
-
-                <div class="input-action-row">
-                  <div class="input-wrapper">
-                    <input 
-                      type="email" 
-                      id="clientEmail" 
-                      placeholder="Enter executive email address..." 
-                      required 
-                      autocomplete="email"
-                      aria-label="Executive email address"
-                    >
-                    <span class="input-focus-border"></span>
-                  </div>
-                  <button type="submit" class="btn btn-primary" id="btnSubmit">
-                    <span>Request Priority Pass</span>
-                    <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
-                  </button>
-                </div>
-
-                <div class="form-footer-notes">
-                  <span class="trust-note"><span class="lock-icon">&#128274;</span> Strict confidentiality guaranteed. No promotional spam.</span>
-                  <span class="spots-left-note"><strong class="highlight-number">3 of 4</strong> Founding slots remaining.</span>
-                </div>
-              </form>
-
-              <!-- Success Notification Slate (Hidden by default) -->
-              <div id="successSlate" class="success-slate" aria-live="polite">
-                <div class="success-icon-badge">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2">
-                    <path d="M20 6L9 17l-5-5"/>
-                  </svg>
-                </div>
-                <h4>Your Dispatch Has Been Recorded</h4>
-                <p>Welcome to the circle. We have generated your priority token: <strong id="tokenDisplay" class="token-code">#TBF-8924</strong>.</p>
-                <div class="success-actions">
-                  <button class="btn btn-sm btn-outline" id="btnDownloadPass">Download Access Pass</button>
-                  <button class="btn btn-sm btn-ghost" id="btnResetForm">Register Another</button>
-                </div>
-              </div>
-
-            </div>
+          <span class="countdown-colon">:</span>
+          <div class="countdown-card">
+            <span class="count-value" id="countMinutes">32</span>
+            <span class="count-unit">MINS</span>
           </div>
-
-        </div>
-      </section>
-
-      <!-- THE THREE PILLARS (EDITORIAL & CLASSICAL ARCHITECTURE) -->
-      <section class="pillars-section" aria-labelledby="pillars-title">
-        <div class="section-divider">
-          <span class="divider-line"></span>
-          <span class="divider-crest">&#9670;</span>
-          <span class="divider-line"></span>
-        </div>
-
-        <div class="container">
-          <div class="section-header text-center">
-            <span class="kicker">THE TRIFECTA OF OUR DISCIPLINE</span>
-            <h2 id="pillars-title" class="section-title">Forged with intent. Designed for permanence.</h2>
-            <p class="section-lead">The digital space is flooded with commoditized AI templates that all look identical. We build the exact opposite: uncompromising, bespoke flagships that command respect.</p>
-          </div>
-
-          <div class="pillars-grid">
-            
-            <!-- Pillar I -->
-            <article class="pillar-column">
-              <div class="pillar-numeral">I</div>
-              <div class="pillar-crest-icon">
-                <svg viewBox="0 0 32 32" fill="none" stroke="currentColor">
-                  <circle cx="16" cy="16" r="12" stroke-width="1.2"/>
-                  <path d="M16 4v24M4 16h24" stroke-width="1.2" stroke-dasharray="2 2"/>
-                  <circle cx="16" cy="16" r="4" fill="#D4AF37"/>
-                </svg>
-              </div>
-              <h3 class="pillar-title">Luminous Clarity</h3>
-              <p class="pillar-subtitle">THE BEACON PRINCIPLE</p>
-              <p class="pillar-desc">
-                Your website is not a digital brochure; it is your company's most valuable ambassador. We distill your value proposition into an inescapable beam of clarity that converts passive visitors into committed clients.
-              </p>
-              <ul class="pillar-specs">
-                <li>&mdash; Psychological conversion flow</li>
-                <li>&mdash; Zero visual friction or clutter</li>
-                <li>&mdash; 24/7 lead intake architecture</li>
-              </ul>
-            </article>
-
-            <!-- Pillar II -->
-            <article class="pillar-column featured-pillar">
-              <div class="pillar-numeral">II</div>
-              <div class="pillar-crest-icon">
-                <svg viewBox="0 0 32 32" fill="none" stroke="currentColor">
-                  <path d="M6 24h20l-3-12H9L6 24z" stroke-width="1.2"/>
-                  <path d="M12 12l4-8 4 8" stroke-width="1.2"/>
-                  <line x1="16" y1="4" x2="16" y2="28" stroke="#D4AF37" stroke-width="1.5"/>
-                </svg>
-              </div>
-              <h3 class="pillar-title">Artisanal Foundry</h3>
-              <p class="pillar-subtitle">THE FORGE METHOD</p>
-              <p class="pillar-desc">
-                Every line of code, typographical curve, and micro-interaction is custom-engineered in our workshop. Built for lightning-fast performance, flawless responsiveness, and uncompromising mobile elegance.
-              </p>
-              <ul class="pillar-specs">
-                <li>&mdash; Bespoke typography & custom palettes</li>
-                <li>&mdash; Sub-second global load speeds</li>
-                <li>&mdash; Production-grade accessibility</li>
-              </ul>
-            </article>
-
-            <!-- Pillar III -->
-            <article class="pillar-column">
-              <div class="pillar-numeral">III</div>
-              <div class="pillar-crest-icon">
-                <svg viewBox="0 0 32 32" fill="none" stroke="currentColor">
-                  <rect x="6" y="8" width="20" height="18" rx="2" stroke-width="1.2"/>
-                  <path d="M10 4h12M16 12v6M13 15h6" stroke-width="1.2" stroke-linecap="round"/>
-                </svg>
-              </div>
-              <h3 class="pillar-title">Enduring Capital</h3>
-              <p class="pillar-subtitle">THE MONUMENT PHILOSOPHY</p>
-              <p class="pillar-desc">
-                We create digital assets that age like solid bronze rather than software fads that expire in months. An enduring digital presence that increases your brand equity and outlasts every industry shift.
-              </p>
-              <ul class="pillar-specs">
-                <li>&mdash; Domain authority & foundational SEO</li>
-                <li>&mdash; High-touch ongoing governance</li>
-                <li>&mdash; Institutional prestige & credibility</li>
-              </ul>
-            </article>
-
+          <span class="countdown-colon">:</span>
+          <div class="countdown-card">
+            <span class="count-value" id="countSeconds">08</span>
+            <span class="count-unit">SECS</span>
           </div>
         </div>
-      </section>
+      </div>
 
-      <!-- QUOTE / CREED MARQUEE -->
-      <section class="creed-section">
-        <div class="creed-container">
-          <blockquote class="creed-quote">
-            &ldquo;In an age of automated generic noise, true craft is the ultimate competitive moat.&rdquo;
-          </blockquote>
-          <cite class="creed-author">&mdash; The Beacon Forge Atelier Manifesto</cite>
-        </div>
-      </section>
-
-      <!-- INTERACTIVE ATELIER AUDIT INQUIRY SECTION -->
-      <section class="consultation-preview" id="inquiry-preview">
-        <div class="container">
-          <div class="consultation-card">
-            <div class="consult-content">
-              <span class="kicker gold-text">DIRECT INQUIRY CHANNEL</span>
-              <h2 class="consult-heading">Have an immediate high-stakes project?</h2>
-              <p class="consult-text">
-                While our full public atelier launch is scheduled for Spring 2026, we review select private commission requests on a rolling basis. Direct all confidential briefs to our senior partner.
-              </p>
-              <div class="direct-contact-badges">
-                <a href="mailto:hello@thebeaconforge.com" class="direct-link" id="emailContactLink">
-                  <span class="link-label">PRIMARY DISPATCH:</span>
-                  <span class="link-email">hello@thebeaconforge.com</span>
-                  <span class="copy-hint" title="Click to copy">Copy</span>
-                </a>
-              </div>
-            </div>
-            <div class="consult-action">
-              <button class="btn btn-gold" id="btnOpenConsultModal">
-                <span>Submit Private Project Brief</span>
-                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8h12M9 3l5 5-5 5"/></svg>
-              </button>
-              <span class="consult-meta">Average partner response time: &lt; 4 hours</span>
-            </div>
+      <!-- Single-Line Early Access Form -->
+      <div class="reservation-box">
+        <form id="waitlistForm" class="dispatch-form" novalidate>
+          <div class="form-input-group">
+            <input 
+              type="email" 
+              id="clientEmail" 
+              placeholder="Enter your work email address..." 
+              required 
+              autocomplete="email"
+              aria-label="Work email address"
+            >
+            <button type="submit" class="btn btn-gold" id="btnSubmit">
+              <span>Request Priority Dossier</span>
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+            </button>
           </div>
+          <div class="form-micro-note">
+            <span>&#128274; Founding cohort strictly limited. Confidential dispatch.</span>
+          </div>
+        </form>
+
+        <!-- Success Slate -->
+        <div id="successSlate" class="success-slate" aria-live="polite">
+          <div class="success-badge">&#10003;</div>
+          <h3>Priority Pass Issued: <span id="tokenDisplay" class="token-code">#TBF-8924</span></h3>
+          <p>We have reserved your place in the founding cohort. A confidential briefing will be dispatched to your inbox.</p>
         </div>
-      </section>
+      </div>
 
     </main>
 
-    <!-- FOOTER & COLOPHON -->
-    <footer class="colophon" role="contentinfo">
-      <div class="colophon-inner">
-        <div class="colophon-brand">
-          <div class="colophon-logo">THE BEACON FORGE</div>
-          <p class="colophon-desc">
-            An independent digital atelier crafting high-converting web architectures and bespoke digital identities for modern enterprise and visionary founders.
-          </p>
-          <div class="colophon-coords">
-            <span>LOCATION: AUSTIN &bull; LONDON &bull; GLOBAL</span>
-            <span>DOMAIN: <a href="https://thebeaconforge.com" target="_blank" rel="noopener">THEBEACONFORGE.COM</a></span>
-          </div>
-        </div>
-
-        <div class="colophon-links">
-          <div class="colophon-col">
-            <div class="col-title">ATELIER</div>
-            <ul>
-              <li><a href="#hero">Manifesto</a></li>
-              <li><a href="#pillars-title">The Three Pillars</a></li>
-              <li><a href="#reserve-section">Early Access Pass</a></li>
-            </ul>
-          </div>
-          
-          <div class="colophon-col">
-            <div class="col-title">COMMUNICATION</div>
-            <ul>
-              <li><a href="mailto:hello@thebeaconforge.com">hello@thebeaconforge.com</a></li>
-              <li><a href="#reserve-section">Private Consultations</a></li>
-              <li><span class="pgp-key">GPG / ENCRYPTION READY</span></li>
-            </ul>
-          </div>
-        </div>
+    <!-- Bottom Footer -->
+    <footer class="colophon-bar">
+      <div class="colophon-left">
+        <span>&copy; 2026 THE BEACON FORGE</span>
+        <span class="divider">&bull;</span>
+        <a href="mailto:hello@thebeaconforge.com" class="email-link" id="emailContactLink" title="Click to copy">
+          hello@thebeaconforge.com
+        </a>
       </div>
 
-      <div class="colophon-bottom">
-        <div class="copyright">
-          &copy; 2026 THE BEACON FORGE. ALL RIGHTS RESERVED. HANDCRAFTED WITH ARCHITECTURAL INTENT.
-        </div>
-        <div class="anti-ai-badge">
-          <span>&loz; ANTI-DISPOSABLE PHILOSOPHY &loz;</span>
-        </div>
+      <div class="colophon-right">
+        <span>AUSTIN &bull; LONDON &bull; GLOBAL</span>
+        <span class="divider">&bull;</span>
+        <button id="soundToggle" class="sound-btn" aria-label="Toggle acoustics">
+          <span class="sound-label">SOUND: OFF</span>
+        </button>
       </div>
     </footer>
 
-  </div>
-
-  <!-- MODAL: Private Project Brief -->
-  <div class="modal-overlay" id="briefModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div class="modal-backdrop" id="modalBackdrop"></div>
-    <div class="modal-container">
-      <button class="modal-close" id="btnCloseModal" aria-label="Close modal">&times;</button>
-      
-      <div class="modal-header">
-        <span class="kicker">CONFIDENTIAL BRIEFING</span>
-        <h3 id="modalTitle">Direct Atelier Intake</h3>
-        <p>Submit your project details for direct review by our lead architect.</p>
-      </div>
-
-      <form id="modalBriefForm" class="modal-form">
-        <div class="form-group">
-          <label for="modalClientName">Your Name & Title</label>
-          <input type="text" id="modalClientName" placeholder="e.g. Victoria Sterling, Managing Director" required>
-        </div>
-
-        <div class="form-group">
-          <label for="modalClientCompany">Company or Venture</label>
-          <input type="text" id="modalClientCompany" placeholder="e.g. Apex Mechanical or Sovereign Capital" required>
-        </div>
-
-        <div class="form-group">
-          <label for="modalClientEmail">Work Email</label>
-          <input type="email" id="modalClientEmail" placeholder="e.g. v.sterling@company.com" required>
-        </div>
-
-        <div class="form-group">
-          <label for="modalBudget">Estimated Scope / Investment Tier</label>
-          <select id="modalBudget" required>
-            <option value="" disabled selected>Select investment tier...</option>
-            <option value="Essential Launch ($2k–$5k)">Essential Flagship Launch ($2,000 – $5,000)</option>
-            <option value="Growth Architecture ($5k–$10k)">Growth Architecture & Lead Engine ($5,000 – $10,000)</option>
-            <option value="Enterprise Domination ($10k+)">Enterprise Flagship & Custom AI ($10,000+)</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="modalNotes">Project Summary &amp; Goals</label>
-          <textarea id="modalNotes" rows="3" placeholder="Tell us about your business, current website challenges, and desired target outcome..." required></textarea>
-        </div>
-
-        <button type="submit" class="btn btn-gold btn-block" id="btnSendBrief">
-          <span>Dispatch Brief to Lead Architect</span>
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8h12M9 3l5 5-5 5"/></svg>
-        </button>
-      </form>
-
-      <div id="modalSuccess" class="modal-success-state" style="display:none;">
-        <div class="success-icon-badge">&#10003;</div>
-        <h4>Brief Received</h4>
-        <p>Our lead partner will review your specifications and follow up within 4 business hours.</p>
-        <button class="btn btn-outline" id="btnCloseSuccessModal">Done</button>
-      </div>
-    </div>
   </div>
 
   <!-- Toast Notification Container -->
