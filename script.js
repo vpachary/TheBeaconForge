@@ -49,6 +49,13 @@ function initBeaconTorch() {
     mouseY = e.clientY;
   });
 
+  window.addEventListener('touchmove', (e) => {
+    if (e.touches && e.touches[0]) {
+      mouseX = e.touches[0].clientX;
+      mouseY = e.touches[0].clientY;
+    }
+  }, { passive: true });
+
   function render() {
     // Smooth lerp
     currentX += (mouseX - currentX) * 0.08;
