@@ -102,7 +102,7 @@
             </button>
           </div>
           <div class="form-micro-note">
-            <span>&#128274; Founding cohort strictly limited. Confidential dispatch.</span>
+            <span>&#128274; Strict DPDP &amp; GDPR compliance. No promotional spam. Opt out anytime.</span>
           </div>
         </form>
 
@@ -124,6 +124,8 @@
         <a href="mailto:hello@thebeaconforge.com" class="email-link" id="emailContactLink" title="Click to copy">
           hello@thebeaconforge.com
         </a>
+        <span class="divider">&bull;</span>
+        <button id="btnOpenPrivacy" class="legal-link-btn">Privacy &amp; Compliance</button>
       </div>
 
       <div class="colophon-right">
@@ -137,9 +139,44 @@
 
   </div>
 
+  <!-- MODAL: Privacy & Legal Compliance Charter -->
+  <div class="modal-overlay" id="privacyModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="privacyTitle">
+    <div class="modal-backdrop" id="privacyBackdrop"></div>
+    <div class="modal-container">
+      <button class="modal-close" id="btnClosePrivacy" aria-label="Close modal">&times;</button>
+      
+      <div class="modal-header">
+        <span class="kicker">LEGAL &amp; PRIVACY CHARTER</span>
+        <h3 id="privacyTitle">Data Governance &amp; Compliance</h3>
+        <p>The Beacon Forge operates under international digital standards.</p>
+      </div>
+
+      <div class="privacy-body">
+        <div class="legal-section">
+          <h4>I. Digital Personal Data Protection (DPDP Act — India)</h4>
+          <p>We collect executive contact information exclusively for project evaluation and VIP preview dispatch. Your data is stored securely and never transferred, sold, or rented to third-party data brokers.</p>
+        </div>
+
+        <div class="legal-section">
+          <h4>II. US CAN-SPAM Act &amp; B2B Communications</h4>
+          <p>All outbound communications comply strictly with CAN-SPAM requirements: transparent sender identity (hello@thebeaconforge.com), clear subject headers, valid commercial mailing information, and instantaneous 1-click unsubscribe mechanisms.</p>
+        </div>
+
+        <div class="legal-section">
+          <h4>III. GDPR &amp; UK PECR Standards</h4>
+          <p>Under European General Data Protection Regulation principles, data subjects retain the right to data access, rectification, and complete erasure upon request via hello@thebeaconforge.com.</p>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-gold btn-block" id="btnClosePrivacyBtn">Acknowledge &amp; Close</button>
+      </div>
+    </div>
+  </div>
+
   <!-- Toast Notification Container -->
   <div class="toast-container" id="toastContainer" aria-live="polite"></div>
 
-  <script src="script.js?v=3"></script>
+  <script src="script.js?v=4"></script>
 </body>
 </html>

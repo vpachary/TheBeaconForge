@@ -231,84 +231,43 @@ and priority project scoping for the 2026 calendar year.
 }
 
 /* ==========================================================================
-   6. PRIVATE CONSULTATION MODAL
+   6. PRIVACY & COMPLIANCE MODAL
    ========================================================================== */
 function initModal() {
-  const modal = document.getElementById('briefModal');
-  const btnOpen = document.getElementById('btnOpenConsultModal');
-  const btnInquireMasthead = document.getElementById('btnInquire');
-  const btnClose = document.getElementById('btnCloseModal');
-  const backdrop = document.getElementById('modalBackdrop');
-  const form = document.getElementById('modalBriefForm');
-  const successState = document.getElementById('modalSuccess');
-  const btnCloseSuccess = document.getElementById('btnCloseSuccessModal');
+  const privacyModal = document.getElementById('privacyModal');
+  const btnOpenPrivacy = document.getElementById('btnOpenPrivacy');
+  const btnClosePrivacy = document.getElementById('btnClosePrivacy');
+  const btnClosePrivacyBtn = document.getElementById('btnClosePrivacyBtn');
+  const privacyBackdrop = document.getElementById('privacyBackdrop');
 
-  if (!modal) return;
-
-  function openModal(e) {
+  function openPrivacy(e) {
     if (e) e.preventDefault();
-    modal.classList.add('active');
-    modal.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-    playTactileSound(440); // A4 note
+    if (privacyModal) {
+      privacyModal.classList.add('active');
+      privacyModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      playTactileSound(440);
+    }
   }
 
-  function closeModal() {
-    modal.classList.remove('active');
-    modal.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
+  function closePrivacy() {
+    if (privacyModal) {
+      privacyModal.classList.remove('active');
+      privacyModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
   }
 
-  if (btnOpen) btnOpen.addEventListener('click', openModal);
-  if (btnInquireMasthead) {
-    btnInquireMasthead.addEventListener('click', (e) => {
-      e.preventDefault();
-      openModal(e);
-    });
-  }
-
-  if (btnClose) btnClose.addEventListener('click', closeModal);
-  if (backdrop) backdrop.addEventListener('click', closeModal);
+  if (btnOpenPrivacy) btnOpenPrivacy.addEventListener('click', openPrivacy);
+  if (btnClosePrivacy) btnClosePrivacy.addEventListener('click', closePrivacy);
+  if (btnClosePrivacyBtn) btnClosePrivacyBtn.addEventListener('click', closePrivacy);
+  if (privacyBackdrop) privacyBackdrop.addEventListener('click', closePrivacy);
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.classList.contains('active')) {
-      closeModal();
+    if (e.key === 'Escape') {
+      closePrivacy();
     }
   });
-
-  if (form) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const briefData = {
-        name: document.getElementById('modalClientName')?.value,
-        company: document.getElementById('modalClientCompany')?.value,
-        email: document.getElementById('modalClientEmail')?.value,
-        budget: document.getElementById('modalBudget')?.value,
-        notes: document.getElementById('modalNotes')?.value,
-        date: new Date().toISOString()
-      };
-
-      const existingBriefs = JSON.parse(localStorage.getItem('tbf_briefs') || '[]');
-      existingBriefs.push(briefData);
-      localStorage.setItem('tbf_briefs', JSON.stringify(existingBriefs));
-
-      form.style.display = 'none';
-      if (successState) successState.style.display = 'block';
-      playTactileSound(659.25); // E5 note
-      showToast('Project brief dispatched to lead architect.');
-    });
-  }
-
-  if (btnCloseSuccess) {
-    btnCloseSuccess.addEventListener('click', () => {
-      closeModal();
-      setTimeout(() => {
-        if (form) form.reset();
-        if (form) form.style.display = 'flex';
-        if (successState) successState.style.display = 'none';
-      }, 400);
-    });
-  }
 }
 
 /* ==========================================================================
