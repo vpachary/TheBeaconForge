@@ -5,7 +5,6 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   initLiveClock();
-  initCountdown();
   initBeaconTorch();
   initAmbientCanvas();
   initForms();
@@ -34,50 +33,7 @@ function initLiveClock() {
 }
 
 /* ==========================================================================
-   2. LAUNCH COUNTDOWN ENGINE
-   ========================================================================== */
-function initCountdown() {
-  // Target: 48 days, 14 hours from now (Spring Launch)
-  const targetDate = new Date();
-  targetDate.setDate(targetDate.getDate() + 48);
-  targetDate.setHours(targetDate.getHours() + 14);
-
-  const daysEl = document.getElementById('countDays');
-  const hoursEl = document.getElementById('countHours');
-  const minsEl = document.getElementById('countMinutes');
-  const secsEl = document.getElementById('countSeconds');
-
-  if (!daysEl || !hoursEl || !minsEl || !secsEl) return;
-
-  function updateTimer() {
-    const now = new Date().getTime();
-    const distance = targetDate.getTime() - now;
-
-    if (distance <= 0) {
-      daysEl.textContent = '00';
-      hoursEl.textContent = '00';
-      minsEl.textContent = '00';
-      secsEl.textContent = '00';
-      return;
-    }
-
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    daysEl.textContent = String(days).padStart(2, '0');
-    hoursEl.textContent = String(hours).padStart(2, '0');
-    minsEl.textContent = String(minutes).padStart(2, '0');
-    secsEl.textContent = String(seconds).padStart(2, '0');
-  }
-
-  updateTimer();
-  setInterval(updateTimer, 1000);
-}
-
-/* ==========================================================================
-   3. BEACON TORCH CURSOR LIGHT
+   2. BEACON TORCH CURSOR LIGHT
    ========================================================================== */
 function initBeaconTorch() {
   const torch = document.getElementById('beaconTorch');
