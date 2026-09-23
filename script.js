@@ -150,10 +150,11 @@ function initForms() {
   const tokenDisplay = document.getElementById('tokenDisplay');
   const btnReset = document.getElementById('btnResetForm');
   const btnDownloadPass = document.getElementById('btnDownloadPass');
+  const btnSubmit = document.getElementById('btnSubmit');
 
   if (!form || !emailInput) return;
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const email = emailInput.value.trim();
 
@@ -163,14 +164,44 @@ function initForms() {
       return;
     }
 
-    const selectedScope = form.querySelector('input[name="projectType"]:checked')?.value || 'Digital Flagship';
     const randomToken = `TBF-${Math.floor(1000 + Math.random() * 9000)}`;
+
+    // Set button loading state
+    const originalBtnHTML = btnSubmit ? btnSubmit.innerHTML : '';
+    if (btnSubmit) {
+      btnSubmit.disabled = true;
+      btnSubmit.innerHTML = '<span>Transmitting...</span>';
+    }
+
+    // Forward to hello@thebeaconforge.com
+    try {
+      await fetch('https://formsubmit.co/ajax/hello@thebeaconforge.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          email: email,
+          pass_token: randomToken,
+          source: 'The Beacon Forge Landing Page',
+          _subject: `New Early Access Request: ${email} (${randomToken})`,
+          _template: 'table'
+        })
+      });
+    } catch (err) {
+      console.warn('Form submission network notification:', err);
+    } finally {
+      if (btnSubmit) {
+        btnSubmit.disabled = false;
+        btnSubmit.innerHTML = originalBtnHTML;
+      }
+    }
 
     // Save to localStorage
     const existing = JSON.parse(localStorage.getItem('tbf_waitlist') || '[]');
     existing.push({
       email,
-      scope: selectedScope,
       token: randomToken,
       timestamp: new Date().toISOString()
     });

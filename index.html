@@ -86,11 +86,15 @@
 
       <!-- Single-Line Early Access Form -->
       <div class="reservation-box">
-        <form id="waitlistForm" class="dispatch-form" novalidate>
+        <form id="waitlistForm" class="dispatch-form" action="https://formsubmit.co/hello@thebeaconforge.com" method="POST" novalidate>
+          <input type="hidden" name="_subject" value="New Early Access Request — The Beacon Forge">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
           <div class="form-input-group">
             <input 
               type="email" 
               id="clientEmail" 
+              name="email"
               placeholder="Enter your work email address..." 
               required 
               autocomplete="email"
