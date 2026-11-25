@@ -1,13 +1,14 @@
 /**
  * THE BEACON FORGE — INTERACTIVE ATELIER ENGINE
- * Vanilla JavaScript (Zero Dependencies, Ultra-Fast)
+ * Vanilla JavaScript (Zero Dependencies, Ultra-Fast, Edge Compatible)
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   initLiveClock();
   initBeaconTorch();
   initAmbientCanvas();
-  initForms();
+  initPackageSelectButtons();
+  initCommissionForm();
   initModal();
   initAudioEngine();
   initCopyActions();
@@ -57,7 +58,6 @@ function initBeaconTorch() {
   }, { passive: true });
 
   function render() {
-    // Smooth lerp
     currentX += (mouseX - currentX) * 0.08;
     currentY += (mouseY - currentY) * 0.08;
     torch.style.left = `${currentX}px`;
@@ -69,7 +69,7 @@ function initBeaconTorch() {
 }
 
 /* ==========================================================================
-   4. AMBIENT CANVAS (FORGE EMBERS & LUMINESCENCE)
+   3. AMBIENT CANVAS (FORGE EMBERS & LUMINESCENCE)
    ========================================================================== */
 function initAmbientCanvas() {
   const canvas = document.getElementById('ambient-canvas');
@@ -99,7 +99,6 @@ function initAmbientCanvas() {
       this.speedY = Math.random() * 0.4 + 0.15;
       this.speedX = (Math.random() - 0.5) * 0.3;
       this.alpha = Math.random() * 0.6 + 0.2;
-      this.maxAlpha = this.alpha;
       this.decay = Math.random() * 0.002 + 0.001;
       this.color = Math.random() > 0.4 ? '212, 175, 55' : '244, 214, 155'; // Gold or Champagne
     }
@@ -141,26 +140,63 @@ function initAmbientCanvas() {
 }
 
 /* ==========================================================================
-   5. WAITLIST DISPATCH & PASS GENERATION
+   4. PACKAGE SELECTION PRESETS
    ========================================================================== */
-function initForms() {
-  const form = document.getElementById('waitlistForm');
-  const emailInput = document.getElementById('clientEmail');
-  const successSlate = document.getElementById('successSlate');
-  const tokenDisplay = document.getElementById('tokenDisplay');
-  const btnReset = document.getElementById('btnResetForm');
-  const btnDownloadPass = document.getElementById('btnDownloadPass');
-  const btnSubmit = document.getElementById('btnSubmit');
+function initPackageSelectButtons() {
+  const selectButtons = document.querySelectorAll('.select-pkg-btn');
+  const packageSelect = document.getElementById('packageSelect');
 
-  if (!form || !emailInput) return;
+  selectButtons.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      const pkg = btn.getAttribute('data-package');
+      if (packageSelect && pkg) {
+        // Find matching option
+        for (let i = 0; i < packageSelect.options.length; i++) {
+          if (packageSelect.options[i].value === pkg || packageSelect.options[i].text.includes(pkg)) {
+            packageSelect.selectedIndex = i;
+            break;
+          }
+        }
+      }
+      playTactileSound(587.33); // D5 chime
+    });
+  });
+}
+
+/* ==========================================================================
+   5. COMMISSION INTAKE FORM DISPATCH
+   ========================================================================== */
+function initCommissionForm() {
+  const form = document.getElementById('commissionForm');
+  const nameInput = document.getElementById('clientName');
+  const emailInput = document.getElementById('clientEmail');
+  const companyInput = document.getElementById('clientCompany');
+  const packageSelect = document.getElementById('packageSelect');
+  const scopeInput = document.getElementById('projectScope');
+  const successSlate = document.getElementById('commissionSuccess');
+  const tokenDisplay = document.getElementById('commissionToken');
+  const btnSubmit = document.getElementById('btnCommissionSubmit');
+
+  if (!form) return;
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const email = emailInput.value.trim();
+
+    const name = nameInput ? nameInput.value.trim() : '';
+    const email = emailInput ? emailInput.value.trim() : '';
+    const company = companyInput ? companyInput.value.trim() : 'Not Specified';
+    const selectedPkg = packageSelect ? packageSelect.value : 'General Inquiry';
+    const scope = scopeInput ? scopeInput.value.trim() : '';
+
+    if (!name) {
+      showToast('Please provide your name.');
+      if (nameInput) nameInput.focus();
+      return;
+    }
 
     if (!email || !isValidEmail(email)) {
-      showToast('Please provide a valid executive email address.');
-      emailInput.focus();
+      showToast('Please provide a valid business email.');
+      if (emailInput) emailInput.focus();
       return;
     }
 
@@ -170,7 +206,7 @@ function initForms() {
     const originalBtnHTML = btnSubmit ? btnSubmit.innerHTML : '';
     if (btnSubmit) {
       btnSubmit.disabled = true;
-      btnSubmit.innerHTML = '<span>Transmitting...</span>';
+      btnSubmit.innerHTML = '<span>Transmitting Commission Brief...</span>';
     }
 
     // Forward to hello@thebeaconforge.com
@@ -182,15 +218,19 @@ function initForms() {
           'Accept': 'application/json'
         },
         body: JSON.stringify({
-          email: email,
-          pass_token: randomToken,
-          source: 'The Beacon Forge Landing Page',
-          _subject: `New Early Access Request: ${email} (${randomToken})`,
+          client_name: name,
+          client_email: email,
+          company_or_website: company,
+          package_selected: selectedPkg,
+          project_scope: scope,
+          commission_token: randomToken,
+          source: 'thebeaconforge.com Commission Intake',
+          _subject: `New Commission Request: ${name} (${selectedPkg}) [${randomToken}]`,
           _template: 'table'
         })
       });
     } catch (err) {
-      console.warn('Form submission network notification:', err);
+      console.warn('Commission submission network notice:', err);
     } finally {
       if (btnSubmit) {
         btnSubmit.disabled = false;
@@ -198,74 +238,32 @@ function initForms() {
       }
     }
 
-    // Save to localStorage
-    const existing = JSON.parse(localStorage.getItem('tbf_waitlist') || '[]');
-    existing.push({
+    // Store submission in localStorage
+    const history = JSON.parse(localStorage.getItem('tbf_commissions') || '[]');
+    history.push({
+      name,
       email,
+      company,
+      package: selectedPkg,
       token: randomToken,
       timestamp: new Date().toISOString()
     });
-    localStorage.setItem('tbf_waitlist', JSON.stringify(existing));
+    localStorage.setItem('tbf_commissions', JSON.stringify(history));
 
     // Play subtle audio confirmation
-    playTactileSound(587.33); // D5 note
+    playTactileSound(659.25); // E5 note
 
     // Update UI
     if (tokenDisplay) tokenDisplay.textContent = `#${randomToken}`;
     form.style.display = 'none';
-    successSlate.classList.add('active');
+    if (successSlate) successSlate.classList.add('active');
 
-    showToast(`Access pass #${randomToken} confirmed for ${email}`);
+    showToast(`Inquiry #${randomToken} confirmed. We will reply within 24h.`);
   });
-
-  if (btnReset) {
-    btnReset.addEventListener('click', () => {
-      form.reset();
-      form.style.display = 'block';
-      successSlate.classList.remove('active');
-    });
-  }
-
-  if (btnDownloadPass) {
-    btnDownloadPass.addEventListener('click', () => {
-      const token = tokenDisplay ? tokenDisplay.textContent : '#TBF-8924';
-      downloadPassFile(token);
-    });
-  }
 }
 
 function isValidEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-}
-
-function downloadPassFile(token) {
-  const content = `=====================================================
-THE BEACON FORGE — ATELIER OF DIGITAL FLAGSHIPS
-Priority Early Access Pass
-=====================================================
-
-Pass Token:   ${token}
-Status:       Founding Cohort (Priority Tier)
-Window:       Spring / Q2 2026 Official Unveiling
-Dispatch:     hello@thebeaconforge.com
-Web:          https://thebeaconforge.com
-
-This pass entitles the holder to an expedited consultation
-and priority project scoping for the 2026 calendar year.
-
-"Where luminous clarity meets master craftsmanship."
-=====================================================`;
-
-  const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = `TheBeaconForge-Pass-${token.replace('#', '')}.txt`;
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  URL.revokeObjectURL(url);
-  showToast('Priority Access Pass downloaded.');
 }
 
 /* ==========================================================================
@@ -366,7 +364,7 @@ function playTactileSound(freq = 440) {
     osc.start();
     osc.stop(audioCtx.currentTime + 0.35);
   } catch (err) {
-    // Silent fail for audio restrictions
+    // Silent fail for audio autoplay restrictions
   }
 }
 
@@ -375,15 +373,20 @@ function playTactileSound(freq = 440) {
    ========================================================================== */
 function initCopyActions() {
   const emailLink = document.getElementById('emailContactLink');
-  if (!emailLink) return;
+  const emailBox = document.getElementById('emailContactBox');
 
-  emailLink.addEventListener('click', (e) => {
-    // If user wants to open mail client, let standard click work or copy
+  function copyEmail(e) {
+    if (e) e.preventDefault();
     navigator.clipboard.writeText('hello@thebeaconforge.com').then(() => {
       showToast('Copied: hello@thebeaconforge.com');
       playTactileSound(587.33);
-    }).catch(() => {});
-  });
+    }).catch(() => {
+      window.location.href = 'mailto:hello@thebeaconforge.com';
+    });
+  }
+
+  if (emailLink) emailLink.addEventListener('click', copyEmail);
+  if (emailBox) emailBox.addEventListener('click', copyEmail);
 }
 
 function showToast(message) {
@@ -398,10 +401,9 @@ function showToast(message) {
 
   setTimeout(() => {
     toast.style.opacity = '0';
-    toast.style.transform = 'translateY(10px)';
-    toast.style.transition = 'all 0.3s ease';
+    toast.style.transform = 'translateY(8px)';
     setTimeout(() => {
       if (toast.parentNode) toast.parentNode.removeChild(toast);
     }, 300);
-  }, 3500);
+  }, 3200);
 }
