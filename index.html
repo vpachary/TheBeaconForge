@@ -2,525 +2,495 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Beacon Forge — Atelier of Digital Flagships</title>
-  <meta name="description" content="The Beacon Forge is a bespoke web design and digital engineering atelier. We build high-converting, edge-deployed digital flagships, conversion funnels, and AI workflows for ambitious businesses.">
-  <meta name="keywords" content="web agency, bespoke web design, digital atelier, digital flagship, high conversion website, luxury web design, The Beacon Forge, web development, SEO, AI automation">
-  <meta name="author" content="The Beacon Forge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>The Beacon Forge: Independent Web Design & Engineering Studio</title>
+  <meta name="description" content="The Beacon Forge is an independent web studio run by Pradeep Achary. We design and build fast, credible websites that turn visitors into clients. Transparent packages from $1,000.">
+  <meta name="author" content="Pradeep Achary">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://thebeaconforge.com/">
-  <meta property="og:title" content="The Beacon Forge — Atelier of Digital Flagships">
-  <meta property="og:description" content="Where luminous clarity meets master craftsmanship. Bespoke web design, transparent packages, and speed-to-lead engineering.">
+  <meta property="og:title" content="The Beacon Forge: Independent Web Studio">
+  <meta property="og:description" content="Custom web design and front-end engineering for ambitious businesses. Built directly by Pradeep Achary.">
   <meta property="og:image" content="https://thebeaconforge.com/favicon.svg">
 
-  <!-- Google Fonts: Cormorant Garamond, Plus Jakarta Sans, Space Mono -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css?v=6">
+  <link rel="stylesheet" href="components.css?v=6">
 </head>
 <body data-theme="dark">
-  <!-- Subtle Canvas for ambient beacon luminescence & particle embers -->
-  <canvas id="ambient-canvas" aria-hidden="true"></canvas>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- Film Grain Overlay for analog, tactile warmth -->
+  <!-- Ambient canvas for subtle background particles -->
+  <canvas id="ambientCanvas" aria-hidden="true"></canvas>
+
+  <!-- Analog tactile film grain -->
   <div class="grain-overlay" aria-hidden="true"></div>
 
-  <!-- Ambient Beacon Cursor Light -->
+  <!-- Ambient light glow following cursor -->
   <div class="beacon-torch" id="beaconTorch" aria-hidden="true"></div>
 
-  <!-- Site Content Container -->
-  <div class="viewport-frame">
+  <!-- Page Container -->
+  <div class="page-wrapper">
 
-    <!-- Top Header / Masthead -->
+    <!-- Masthead Navigation -->
     <header class="masthead">
-      <div class="brand-crest">
-        <a href="#" class="brand-link" aria-label="The Beacon Forge Home">
+      <div class="container masthead-inner">
+        <a href="#hero" class="brand-crest" aria-label="The Beacon Forge home">
           <div class="crest-symbol" aria-hidden="true">
             <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M22 4L26.5 16H17.5L22 4Z" fill="#F3D59B"/>
+              <path d="M22 4L26.5 16H17.5L22 4Z" fill="#F4D69B"/>
               <circle cx="22" cy="18" r="2.5" fill="#FFF8EB"/>
               <path d="M14 26H30L28 30H16L14 26Z" fill="#C89666"/>
               <path d="M12 30H32L34 38H10L12 30Z" stroke="#E5C386" stroke-width="1.2" fill="#1C1E24"/>
               <line x1="8" y1="39" x2="36" y2="39" stroke="#E5C386" stroke-width="1.5" stroke-linecap="round"/>
-              <line x1="22" y1="4" x2="22" y2="1" stroke="#F3D59B" stroke-width="1.2" stroke-linecap="round"/>
+              <line x1="22" y1="4" x2="22" y2="1" stroke="#F4D69B" stroke-width="1.2" stroke-linecap="round"/>
             </svg>
           </div>
-          <div class="brand-typography">
-            <span class="brand-title">THE BEACON FORGE</span>
-            <span class="brand-subtitle">ATELIER OF DIGITAL FLAGSHIPS</span>
+          <div class="brand-text">
+            <span class="brand-name">THE BEACON FORGE</span>
+            <span class="brand-tagline">Independent Web Studio</span>
           </div>
         </a>
-      </div>
 
-      <nav class="masthead-nav" aria-label="Main Navigation">
-        <a href="#pillars" class="nav-link">Pillars</a>
-        <a href="#showcase" class="nav-link">Showcase</a>
-        <a href="#packages" class="nav-link">Packages</a>
-        <a href="#retainers" class="nav-link">Care Plans</a>
-        <a href="#contact" class="nav-link nav-link-cta">Commission Site</a>
-      </nav>
-
-      <div class="masthead-meta">
-        <div class="status-indicator">
-          <span class="status-dot"></span>
-          <span class="status-text">ACCEPTING Q1/Q2 COMMISSIONS</span>
-        </div>
-        <div class="clock-display" id="liveClock">00:00:00 UTC</div>
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="#approach">Model</a>
+          <a href="#pricing">Packages</a>
+          <a href="#process">Process</a>
+          <a href="#standards">Standards</a>
+          <a href="#contact" class="btn btn-secondary btn-sm">Get in Touch</a>
+        </nav>
       </div>
     </header>
 
-    <!-- Main Content Flow -->
     <main id="main-content">
 
       <!-- Hero Section -->
-      <section class="hero-stage">
-        <div class="editorial-badge">
-          <span class="badge-dot">&#9670;</span>
-          <span class="badge-text">BESPOKE WEB ENGINEERING &bull; TIER-1 STANDARDS</span>
-          <span class="badge-dot">&#9670;</span>
-        </div>
+      <section id="hero" class="hero-section" aria-labelledby="hero-title">
+        <div class="container hero-container">
 
-        <h1 class="hero-headline">
-          Where luminous <em class="serif-italic">clarity</em> meets master <em class="serif-italic gold-gradient">craftsmanship.</em>
-        </h1>
-
-        <p class="hero-subtext">
-          We forge bespoke digital architectures and high-converting web engines for businesses that refuse to settle for generic templates. No page-builder bloat. Sub-second global performance.
-        </p>
-
-        <div class="hero-actions">
-          <a href="#packages" class="btn btn-gold">
-            <span>Explore Packages &amp; Pricing</span>
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
-          <a href="#contact" class="btn btn-secondary">
-            <span>Book 15-Min Scoping Call</span>
-          </a>
-        </div>
-
-        <div class="trust-tags">
-          <span class="trust-tag">&#10003; 50% Deposit Protection</span>
-          <span class="trust-divider">&bull;</span>
-          <span class="trust-tag">&#10003; 48-72h Staging Preview</span>
-          <span class="trust-divider">&bull;</span>
-          <span class="trust-tag">&#10003; Cloudflare Edge Deployed</span>
-          <span class="trust-divider">&bull;</span>
-          <span class="trust-tag">&#10003; 100% Client Asset Ownership</span>
-        </div>
-      </section>
-
-      <!-- Key Metrics & Engineering Principles -->
-      <section class="metrics-strip" aria-label="Engineering Metrics">
-        <div class="metric-card">
-          <span class="metric-value">&lt; 1.0s</span>
-          <span class="metric-label">Edge Global TTFB</span>
-          <p class="metric-desc">Cloudflare edge routing with asset minification and zero theme overhead.</p>
-        </div>
-        <div class="metric-card">
-          <span class="metric-value">0%</span>
-          <span class="metric-label">Bloat &amp; Page Builders</span>
-          <p class="metric-desc">Clean, semantic HTML5, modern CSS, and tailored TypeScript/JS.</p>
-        </div>
-        <div class="metric-card">
-          <span class="metric-value">&lt; 60s</span>
-          <span class="metric-label">Speed-to-Lead</span>
-          <p class="metric-desc">Instant lead capture routing, email dispatch, and 1-click WhatsApp connectivity.</p>
-        </div>
-        <div class="metric-card">
-          <span class="metric-value">38</span>
-          <span class="metric-label">Meridians Engineered</span>
-          <p class="metric-desc">Proven by our live astronomical observatory platform, FestiveClock.com.</p>
-        </div>
-      </section>
-
-      <!-- Section: Pillars ("What We Forge") -->
-      <section class="content-section" id="pillars">
-        <div class="section-header">
-          <span class="section-kicker">01 // CORE CAPABILITIES</span>
-          <h2 class="section-title">What We Forge</h2>
-          <p class="section-subtitle">Outcome-engineered systems designed to elevate credibility, search visibility, and inbound conversion.</p>
-        </div>
-
-        <div class="pillars-grid">
-          <article class="pillar-card">
-            <div class="pillar-num">01</div>
-            <h3 class="pillar-title">Bespoke Digital Flagships</h3>
-            <p class="pillar-desc">
-              Custom-crafted digital presence reflecting the precision of an atelier. Curated typography pairings, micro-interactions, dark/light contrast, and fluid responsiveness across mobile, tablet, and widescreen.
-            </p>
-            <ul class="pillar-list">
-              <li>No off-the-shelf, slow WordPress themes</li>
-              <li>Pixel-perfect responsive design across every device</li>
-              <li>Custom Website Owner's Guide (PDF) delivered at launch</li>
-            </ul>
-          </article>
-
-          <article class="pillar-card">
-            <div class="pillar-num">02</div>
-            <h3 class="pillar-title">Speed-to-Lead &amp; Conversion</h3>
-            <p class="pillar-desc">
-              Web traffic is worthless if it doesn't convert into booked appointments. We build direct-response layout architectures with instant multi-channel lead routing, WhatsApp click-to-chat, and automated booking calendar integrations.
-            </p>
-            <ul class="pillar-list">
-              <li>Direct inquiry capture to executive email &amp; CRM</li>
-              <li>WhatsApp 1-click chat integration for immediate engagement</li>
-              <li>Cal.com / Calendly real-time self-booking workflows</li>
-            </ul>
-          </article>
-
-          <article class="pillar-card">
-            <div class="pillar-num">03</div>
-            <h3 class="pillar-title">Search Authority &amp; Local SEO</h3>
-            <p class="pillar-desc">
-              Dominate high-intent local and regional buyer searches. We implement technical on-page SEO, rich JSON-LD schema markup, Google Business Profile integration, and dynamic editorial blog architectures.
-            </p>
-            <ul class="pillar-list">
-              <li>Semantic HTML5, Open Graph tags, and structured schema</li>
-              <li>Optional headless/dynamic CMS for effortless article publishing</li>
-              <li>Automated XML sitemaps, robots hygiene, and Core Web Vitals pass</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <!-- Section: Proof of Craft / Living Flagship -->
-      <section class="content-section" id="showcase">
-        <div class="section-header">
-          <span class="section-kicker">02 // LIVING PROOF OF CRAFT</span>
-          <h2 class="section-title">The Observatory Artifact</h2>
-          <p class="section-subtitle">We don't just talk about craftsmanship. We engineer living, global platforms that prove it daily.</p>
-        </div>
-
-        <div class="flagship-feature-card">
-          <div class="flagship-content">
-            <div class="flagship-badge">
-              <span class="badge-dot">&#9670;</span>
-              <span>LIVE GLOBAL WEB PROPERTY &bull; FESTIVECLOCK.COM</span>
-            </div>
-            <h3 class="flagship-title">FestiveClock — Global Cultural Observatory</h3>
-            <p class="flagship-desc">
-              An edge-deployed temporal chronometer tracking celebration meridians across 38 global cities. Built under strict Anti-AI Slop design mandates, it demonstrates our highest technical benchmarks:
-            </p>
-            <div class="flagship-tech-pills">
-              <span class="tech-pill">Zero-Asset Web Audio Synthesizer</span>
-              <span class="tech-pill">Canvas 2D 60 FPS Particle Physics</span>
-              <span class="tech-pill">38-Meridian Real-Time Telemetry</span>
-              <span class="tech-pill">Cloudflare Workers Edge Network</span>
-            </div>
-            <div class="flagship-actions">
-              <a href="https://festiveclock.com" target="_blank" rel="noopener noreferrer" class="btn btn-gold">
-                <span>Experience FestiveClock.com</span>
-                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-              </a>
-              <span class="flagship-note">Live on Cloudflare Workers &bull; Sub-second global TTFB</span>
-            </div>
+          <div class="status-pill">
+            <span class="pulse-dot" aria-hidden="true"></span>
+            <span>Available for new client projects &bull; Booking Q2 2026</span>
           </div>
-          <div class="flagship-visual" aria-hidden="true">
-            <div class="flagship-display">
-              <div class="display-ring"></div>
-              <div class="display-time">00:00:00.000</div>
-              <div class="display-meta">38 MERIDIANS &bull; ZERO LATENCY</div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <!-- Section: Packages & Pricing Menu -->
-      <section class="content-section" id="packages">
-        <div class="section-header">
-          <span class="section-kicker">03 // TRANSPARENT PACKAGES</span>
-          <h2 class="section-title">Web Design &amp; Engineering Packages</h2>
-          <p class="section-subtitle">No opaque retainers or surprise invoices. Clear deliverables, fixed pricing, and milestone-based peace of mind.</p>
-        </div>
+          <h1 id="hero-title" class="hero-title">
+            Websites built for businesses that have outgrown templates.
+          </h1>
 
-        <div class="packages-grid">
+          <p class="hero-lead">
+            The Beacon Forge is an independent web studio run by Pradeep Achary. I design and build fast, responsive websites for founders and operators who need immediate credibility and clear conversion paths.
+          </p>
 
-          <!-- Package 01: Essential -->
-          <article class="package-card">
-            <div class="package-header">
-              <span class="package-tier">01 // ESSENTIAL WEBSITE</span>
-              <div class="package-price-wrap">
-                <span class="package-currency">$</span>
-                <span class="package-amount">1,000</span>
-                <span class="package-term">one-time</span>
-              </div>
-              <p class="package-ideal">Ideal for businesses needing a high-impact digital presence and lead generator without ongoing content overhead.</p>
-            </div>
-
-            <div class="package-body">
-              <div class="feature-group-label">Deliverables &amp; Scope:</div>
-              <ul class="feature-list">
-                <li><strong>Up to 5 Custom Pages</strong> (Home, About, Services, Proof, Contact)</li>
-                <li><strong>Bespoke Atelier Design</strong> (Tailored typography &amp; zero-bloat code)</li>
-                <li><strong>Mobile &amp; Multi-Device Responsive</strong> across all viewports</li>
-                <li><strong>Inbound Lead Form</strong> routed directly to executive email</li>
-                <li><strong>WhatsApp Click-to-Chat</strong> for immediate 1-click outreach</li>
-                <li><strong>Foundational On-Page SEO</strong> (Meta tags, Open Graph, schema)</li>
-                <li><strong>Cloudflare Edge Deployment</strong> &amp; SSL DNS configuration</li>
-                <li><strong>2 Structured Revision Rounds</strong> during staging preview</li>
-                <li><strong>Website Owner's Guide</strong> (Custom PDF launch dossier)</li>
-              </ul>
-            </div>
-
-            <div class="package-footer">
-              <a href="#contact" class="btn btn-secondary btn-block select-pkg-btn" data-package="Essential Website ($1,000)">
-                <span>Select Essential Package</span>
-              </a>
-            </div>
-          </article>
-
-          <!-- Package 02: Professional + CMS (Featured) -->
-          <article class="package-card package-card-featured">
-            <div class="featured-badge">FLAGSHIP PICK</div>
-            <div class="package-header">
-              <span class="package-tier">02 // PROFESSIONAL + CMS</span>
-              <div class="package-price-wrap">
-                <span class="package-currency">$</span>
-                <span class="package-amount">2,000</span>
-                <span class="package-term">one-time</span>
-              </div>
-              <p class="package-ideal">For growing brands actively publishing articles, building organic search authority, and updating content independently.</p>
-            </div>
-
-            <div class="package-body">
-              <div class="feature-group-label">Everything in Essential, plus:</div>
-              <ul class="feature-list">
-                <li><strong>Full Headless/Dynamic CMS Engine</strong> for easy team updates</li>
-                <li><strong>Blog &amp; Article Publishing System</strong> (Unlimited posts &amp; tags)</li>
-                <li><strong>Rich Media Management</strong> (Automated WebP/responsive media)</li>
-                <li><strong>Dynamic Content Taxonomy</strong> (Categories, authors, dates)</li>
-                <li><strong>Secure Client Admin Portal</strong> with role permissions</li>
-                <li><strong>Personalized Video Walkthrough</strong> (Loom training for your team)</li>
-                <li><strong>Dynamic Blog On-Page SEO</strong> &amp; automated sitemap pinging</li>
-                <li><strong>Priority Staging Timeline</strong> &amp; dedicated revision support</li>
-                <li><strong>Custom Website Owner's Dossier</strong> &amp; operational credentials</li>
-              </ul>
-            </div>
-
-            <div class="package-footer">
-              <a href="#contact" class="btn btn-gold btn-block select-pkg-btn" data-package="Professional Website + CMS ($2,000)">
-                <span>Select Professional + CMS</span>
-                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-              </a>
-            </div>
-          </article>
-
-          <!-- Package 03: Custom Solution -->
-          <article class="package-card">
-            <div class="package-header">
-              <span class="package-tier">03 // CUSTOM SOLUTION</span>
-              <div class="package-price-wrap">
-                <span class="package-amount package-custom">Custom Quote</span>
-                <span class="package-term">milestone-based</span>
-              </div>
-              <p class="package-ideal">For enterprises requiring custom web applications, client portals, conversational AI bots, or specialized workflows.</p>
-            </div>
-
-            <div class="package-body">
-              <div class="feature-group-label">Tailored Capabilities:</div>
-              <ul class="feature-list">
-                <li><strong>In-Depth Discovery &amp; Scoping</strong> with systems architecture blueprint</li>
-                <li><strong>Custom Client Portals</strong> &amp; multi-tenant web applications</li>
-                <li><strong>Conversational AI Agents</strong> (Voice qualification &amp; 24/7 receptionists)</li>
-                <li><strong>CRM &amp; Database Automations</strong> (GoHighLevel, HubSpot, Supabase)</li>
-                <li><strong>Full-Scale E-Commerce</strong> with Stripe &amp; multi-currency checkout</li>
-                <li><strong>Milestone-Based Delivery</strong> with phased sign-offs</li>
-                <li><strong>Comprehensive Security Audit</strong> &amp; vulnerability testing</li>
-                <li><strong>Full Codebase Handover</strong> &amp; administrative handover</li>
-              </ul>
-            </div>
-
-            <div class="package-footer">
-              <a href="#contact" class="btn btn-secondary btn-block select-pkg-btn" data-package="Custom Solution (Quote)">
-                <span>Request Custom Scoping</span>
-              </a>
-            </div>
-          </article>
-
-        </div>
-      </section>
-
-      <!-- Section: Monthly Care & Retainers -->
-      <section class="content-section" id="retainers">
-        <div class="section-header">
-          <span class="section-kicker">04 // ONGOING PERFORMANCE</span>
-          <h2 class="section-title">Monthly Website Care &amp; Growth</h2>
-          <p class="section-subtitle">Ensure your digital flagship remains secure, lightning-fast, and continuously optimized with our monthly retainers.</p>
-        </div>
-
-        <div class="retainers-grid">
-          <div class="retainer-card">
-            <div class="retainer-badge">PEACE OF MIND</div>
-            <h3 class="retainer-name">01 — Website Care</h3>
-            <div class="retainer-price">
-              <span class="retainer-amount">$99</span>
-              <span class="retainer-frequency">/ month</span>
-            </div>
-            <p class="retainer-desc">Complete technical maintenance, security, and uptime protection. Never worry about broken plugins or server issues.</p>
-            <ul class="retainer-features">
-              <li>&#10003; 24/7 Uptime &amp; Performance Monitoring</li>
-              <li>&#10003; Security Patches &amp; Vulnerability Shielding</li>
-              <li>&#10003; Automated Regular Cloud Backups</li>
-              <li>&#10003; Domain DNS &amp; SSL Certificate Maintenance</li>
-              <li>&#10003; Minor Content &amp; Copy Updates Included</li>
-              <li>&#10003; Standard Technical Email Support</li>
-            </ul>
-            <a href="#contact" class="btn btn-secondary btn-block select-pkg-btn" data-package="Care Retainer ($99/mo)">
-              <span>Add Care Plan</span>
+          <div class="hero-actions">
+            <a href="#pricing" class="btn btn-primary">
+              <span>View Packages &amp; Pricing</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M8 3v10M4 9l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <a href="#contact" class="btn btn-ghost">
+              <span>Book a Consultation</span>
             </a>
           </div>
 
-          <div class="retainer-card retainer-card-gold">
-            <div class="retainer-badge">SEARCH &amp; GROWTH</div>
-            <h3 class="retainer-name">02 — Growth Retainer</h3>
-            <div class="retainer-price">
-              <span class="retainer-amount">$249</span>
-              <span class="retainer-frequency">/ month</span>
+          <!-- Proof Metrics Strip -->
+          <div class="metrics-grid">
+            <div class="metric-card">
+              <span class="metric-value">&lt; 1.0s</span>
+              <span class="metric-label">Target load time on global edge networks</span>
             </div>
-            <p class="retainer-desc">Everything in Care, combined with continuous search visibility, content updates, and conversion rate optimizations.</p>
-            <ul class="retainer-features">
-              <li>&#10003; <strong>Everything in Website Care</strong></li>
-              <li>&#10003; Up to 2 Search-Optimized Articles Published / Month</li>
-              <li>&#10003; Google Search Console &amp; Analytics Health Audits</li>
-              <li>&#10003; Continuous Conversion &amp; Speed Optimizations</li>
-              <li>&#10003; Monthly Health &amp; Performance Executive Report</li>
-              <li>&#10003; <strong>Priority Dedicated Technical Support</strong></li>
-            </ul>
-            <a href="#contact" class="btn btn-gold btn-block select-pkg-btn" data-package="Growth Retainer ($249/mo)">
-              <span>Add Growth Plan</span>
-            </a>
+            <div class="metric-card">
+              <span class="metric-value">100%</span>
+              <span class="metric-label">Direct founder execution with zero junior handoffs</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-value">10–14 Days</span>
+              <span class="metric-label">Average delivery for core 5-page custom websites</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-value">$1,000</span>
+              <span class="metric-label">Transparent starting price with zero hidden fees</span>
+            </div>
           </div>
+
         </div>
       </section>
 
-      <!-- Section: The 4-Step Forge Protocol -->
-      <section class="content-section" id="protocol">
-        <div class="section-header">
-          <span class="section-kicker">05 // HOW WE OPERATE</span>
-          <h2 class="section-title">The 4-Step Forge Protocol</h2>
-          <p class="section-subtitle">A disciplined, transparent delivery framework engineered to respect your time and guarantee delivery quality.</p>
-        </div>
+      <!-- The Studio Model: Solo vs Bloated Agency -->
+      <section id="approach" class="section studio-model" aria-labelledby="model-title">
+        <div class="container">
 
-        <div class="steps-grid">
-          <div class="step-card">
-            <div class="step-number">01</div>
-            <h3 class="step-title">Discovery &amp; 50% Deposit</h3>
-            <p class="step-desc">We lock your package, collect brand assets, and issue a transparent invoice via Stripe. A 50% deposit secures your build queue slot.</p>
+          <div class="section-header">
+            <span class="section-kicker">Operating Model</span>
+            <h2 id="model-title" class="section-title">The independent studio advantage</h2>
+            <p class="section-subtitle">
+              Most clients looking for web design face two extremes: unpredictable marketplaces or expensive agencies with heavy overhead. A founder-led studio delivers the craft of a design firm with the speed and directness of a dedicated senior engineer.
+            </p>
           </div>
-          <div class="step-card">
-            <div class="step-number">02</div>
-            <h3 class="step-title">Bespoke Build &amp; Staging</h3>
-            <p class="step-desc">Within 48–72 hours, an interactive staging prototype is delivered on a private preview URL for your hands-on walkthrough.</p>
+
+          <div class="comparison-grid">
+            <div class="comparison-card agency-card">
+              <div class="card-tag">Traditional Agency</div>
+              <h3 class="comparison-title">Account managers and hidden overhead</h3>
+              <ul class="comparison-list">
+                <li>
+                  <span class="cross" aria-hidden="true">&times;</span>
+                  <span>High fees to subsidize project managers and corporate offices.</span>
+                </li>
+                <li>
+                  <span class="cross" aria-hidden="true">&times;</span>
+                  <span>Sales pitches led by directors, but the actual build is handed to junior staff.</span>
+                </li>
+                <li>
+                  <span class="cross" aria-hidden="true">&times;</span>
+                  <span>Slow turnaround times weighed down by internal review cycles.</span>
+                </li>
+                <li>
+                  <span class="cross" aria-hidden="true">&times;</span>
+                  <span>Heavy, bloated page builders that hurt load speeds and mobile ranking.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="comparison-card studio-card">
+              <div class="card-tag card-tag-gold">The Beacon Forge</div>
+              <h3 class="comparison-title">Direct collaboration with your builder</h3>
+              <ul class="comparison-list">
+                <li>
+                  <span class="check" aria-hidden="true">&#10003;</span>
+                  <span>Direct communication with Pradeep from kickoff call to final domain cutover.</span>
+                </li>
+                <li>
+                  <span class="check" aria-hidden="true">&#10003;</span>
+                  <span>Bespoke frontend code written cleanly without fragile dependencies.</span>
+                </li>
+                <li>
+                  <span class="check" aria-hidden="true">&#10003;</span>
+                  <span>Fixed pricing and defined scopes agreed upon before work starts.</span>
+                </li>
+                <li>
+                  <span class="check" aria-hidden="true">&#10003;</span>
+                  <span>Full ownership of code, assets, and hosting accounts transferred to you.</span>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div class="step-card">
-            <div class="step-number">03</div>
-            <h3 class="step-title">Two Structured Revision Rounds</h3>
-            <p class="step-desc">We collaborate on exact copy, imagery, and styling adjustments across two dedicated feedback iterations to achieve perfection.</p>
-          </div>
-          <div class="step-card">
-            <div class="step-number">04</div>
-            <h3 class="step-title">Edge Launch &amp; Owner Dossier</h3>
-            <p class="step-desc">Upon final approval and remaining balance settlement, we execute zero-downtime DNS cutover and deliver your Website Owner's Guide (PDF).</p>
-          </div>
+
         </div>
       </section>
 
-      <!-- Section: Intake & Commission Stage -->
-      <section class="content-section" id="contact">
-        <div class="section-header">
-          <span class="section-kicker">06 // INITIATE COMMISSION</span>
-          <h2 class="section-title">Ready to Forge Your Digital Flagship?</h2>
-          <p class="section-subtitle">Submit your project details below or book an introductory discovery walkthrough. We respond within 24 hours.</p>
+      <!-- Packages & Transparent Pricing -->
+      <section id="pricing" class="section pricing-section" aria-labelledby="pricing-title">
+        <div class="container">
+
+          <div class="section-header">
+            <span class="section-kicker">Fixed Pricing</span>
+            <h2 id="pricing-title" class="section-title">Transparent packages, no surprises</h2>
+            <p class="section-subtitle">
+              Straightforward pricing tailored to where your business is today. Every tier includes responsive design, SEO hygiene, and production deployment.
+            </p>
+          </div>
+
+          <div class="pricing-grid">
+
+            <!-- Tier 1 -->
+            <article class="pricing-card">
+              <div class="pricing-badge">Foundation</div>
+              <h3 class="package-name">Essential Website</h3>
+              <p class="package-desc">For service companies, consultants, and founders who need a credible online presence that drives inquiries.</p>
+
+              <div class="price-block">
+                <span class="currency">$</span>
+                <span class="amount">1,000</span>
+                <span class="term">one-time investment</span>
+              </div>
+
+              <div class="deliverables-heading">Deliverables:</div>
+              <ul class="deliverables-list">
+                <li>Up to 5 custom-designed pages (Home, About, Services, Case Studies, Contact)</li>
+                <li>Mobile-first architecture optimized across phone, tablet, and desktop</li>
+                <li>Inquiry capture form routed directly to your business email</li>
+                <li>WhatsApp direct chat button for rapid mobile lead conversion</li>
+                <li>On-page technical SEO, OpenGraph social cards, and schema tags</li>
+                <li>Production deployment to global edge network with SSL</li>
+                <li>Two structured rounds of design and copy revisions</li>
+                <li>Complete website documentation and asset handoff package</li>
+              </ul>
+
+              <div class="card-action">
+                <a href="#contact" class="btn btn-secondary btn-block" data-package="Essential Website ($1,000)">Choose Essential</a>
+                <span class="turnaround-note">Delivered in 10 to 14 days</span>
+              </div>
+            </article>
+
+            <!-- Tier 2 (Featured) -->
+            <article class="pricing-card featured-card">
+              <div class="featured-ribbon">Most Popular</div>
+              <div class="pricing-badge gold-badge">Full Publishing</div>
+              <h3 class="package-name">Professional + CMS</h3>
+              <p class="package-desc">Everything in Essential, plus a modern content management system so your team can publish articles and updates independently.</p>
+
+              <div class="price-block">
+                <span class="currency">$</span>
+                <span class="amount">2,000</span>
+                <span class="term">one-time investment</span>
+              </div>
+
+              <div class="deliverables-heading">Everything in Essential, plus:</div>
+              <ul class="deliverables-list">
+                <li>Visual administrative dashboard for your team to write and edit content</li>
+                <li>Full blog and case study publishing engine with categories and tags</li>
+                <li>Rich media management with automated image optimization</li>
+                <li>Role-based client logins for secure multi-author access</li>
+                <li>Dynamic metadata automation for each newly published post</li>
+                <li>Recorded walkthrough video teaching your team how to publish content</li>
+                <li>Two structured rounds of design, layout, and CMS revisions</li>
+                <li>30 days of post-launch technical support and guidance</li>
+              </ul>
+
+              <div class="card-action">
+                <a href="#contact" class="btn btn-primary btn-block" data-package="Professional + CMS ($2,000)">Choose Professional</a>
+                <span class="turnaround-note">Delivered in 2 to 3 weeks</span>
+              </div>
+            </article>
+
+            <!-- Tier 3 -->
+            <article class="pricing-card">
+              <div class="pricing-badge">Bespoke Solutions</div>
+              <h3 class="package-name">Custom Solution</h3>
+              <p class="package-desc">For businesses requiring custom workflows, member portals, headless architectures, or web application interfaces.</p>
+
+              <div class="price-block">
+                <span class="custom-rate">Custom Quote</span>
+                <span class="term">milestone-based payments</span>
+              </div>
+
+              <div class="deliverables-heading">Tailored capabilities:</div>
+              <ul class="deliverables-list">
+                <li>Client portals, restricted dashboards, and authenticated areas</li>
+                <li>E-commerce systems with custom checkout flows and inventory rules</li>
+                <li>Headless CMS setups or custom database architectures</li>
+                <li>Third-party API integrations, CRM pipelines, and webhook handlers</li>
+                <li>Custom interactive tools, calculators, or product configurators</li>
+                <li>Design systems and reusable component libraries</li>
+                <li>Milestone-based delivery stages with live staging environments</li>
+                <li>Extended maintenance and technical roadmap advisory</li>
+              </ul>
+
+              <div class="card-action">
+                <a href="#contact" class="btn btn-secondary btn-block" data-package="Custom Solution">Discuss Custom Project</a>
+                <span class="turnaround-note">Timeline scoped per milestone</span>
+              </div>
+            </article>
+
+          </div>
+
+          <div class="ownership-callout">
+            <div class="callout-icon" aria-hidden="true">&#9432;</div>
+            <div class="callout-text">
+              <strong>100% Client Ownership:</strong> You pay domain registrars and hosting providers directly. There are no proprietary lock-ins, hostage codebases, or surprise recurring maintenance retainers unless requested.
+            </div>
+          </div>
+
         </div>
+      </section>
 
-        <div class="intake-stage">
+      <!-- The 3-Step Process -->
+      <section id="process" class="section process-section" aria-labelledby="process-title">
+        <div class="container">
 
-          <!-- Direct Inquiry Form -->
-          <div class="form-card">
-            <form id="commissionForm" class="commission-form" action="https://formsubmit.co/hello@thebeaconforge.com" method="POST" novalidate>
-              <input type="hidden" name="_subject" value="New Commission Inquiry — The Beacon Forge">
+          <div class="section-header">
+            <span class="section-kicker">How We Work</span>
+            <h2 id="process-title" class="section-title">A direct, three-step delivery process</h2>
+            <p class="section-subtitle">
+              No endless committee meetings. We follow a clear, collaborative sprint from concept to deployment.
+            </p>
+          </div>
+
+          <div class="steps-grid">
+
+            <div class="step-card">
+              <div class="step-num">Step 1</div>
+              <h3 class="step-title">Scope &amp; Discovery</h3>
+              <p class="step-desc">
+                We review your commercial goals, target audience, and content requirements over a focused 30-minute kickoff or written brief. We agree on the site map, package scope, and timeline before anything starts.
+              </p>
+              <div class="step-outcome"><strong>Outcome:</strong> Clear proposal and locked production schedule.</div>
+            </div>
+
+            <div class="step-card">
+              <div class="step-num">Step 2</div>
+              <h3 class="step-title">Design &amp; Code</h3>
+              <p class="step-desc">
+                I build interactive preview pages on private staging URLs. You review the real typography, page rhythm, and mobile behavior directly on your phone and desktop rather than static slide decks.
+              </p>
+              <div class="step-outcome"><strong>Outcome:</strong> Staging site ready for your structured review.</div>
+            </div>
+
+            <div class="step-card">
+              <div class="step-num">Step 3</div>
+              <h3 class="step-title">Refine &amp; Deploy</h3>
+              <p class="step-desc">
+                We run structured revision rounds to fine-tune copy and visual details. Once approved, I connect your custom domain, provision SSL certificates, verify email forms, and hand over all credentials.
+              </p>
+              <div class="step-outcome"><strong>Outcome:</strong> Live flagship site on fast edge hosting.</div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Technical & Craft Standards -->
+      <section id="standards" class="section standards-section" aria-labelledby="standards-title">
+        <div class="container">
+
+          <div class="section-header">
+            <span class="section-kicker">Engineering Quality</span>
+            <h2 id="standards-title" class="section-title">Crafted with rigorous digital standards</h2>
+            <p class="section-subtitle">
+              Every website leaving The Beacon Forge meets verifiable engineering benchmarks.
+            </p>
+          </div>
+
+          <div class="standards-grid">
+            <div class="standard-item">
+              <h3 class="standard-title">Clean semantic HTML5 &amp; CSS</h3>
+              <p class="standard-desc">Written without heavy theme bloat or dozens of fragile third-party plugins. Fast to parse, maintainable, and search-engine friendly.</p>
+            </div>
+
+            <div class="standard-item">
+              <h3 class="standard-title">Sub-second global response</h3>
+              <p class="standard-desc">Deployed via distributed global edge infrastructure (Cloudflare / Vercel), ensuring near-instant page loads regardless of where your visitors are located.</p>
+            </div>
+
+            <div class="standard-item">
+              <h3 class="standard-title">Mobile-first precision</h3>
+              <p class="standard-desc">Designed and tested across modern smartphone viewports (320px to 430px) as rigorously as on widescreen monitors.</p>
+            </div>
+
+            <div class="standard-item">
+              <h3 class="standard-title">International privacy hygiene</h3>
+              <p class="standard-desc">Inquiry pipelines designed in compliance with US CAN-SPAM, European GDPR, and Indian DPDP guidelines with clear privacy transparency.</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Contact / Inquiry Section -->
+      <section id="contact" class="section contact-section" aria-labelledby="contact-title">
+        <div class="container contact-container">
+
+          <div class="contact-info">
+            <span class="section-kicker">Start a Conversation</span>
+            <h2 id="contact-title" class="section-title">Tell me about your project</h2>
+            <p class="contact-lead">
+              Ready to build a website that accurately reflects your business? Send over a short note with your project details or questions. I reply directly within 24 business hours.
+            </p>
+
+            <div class="contact-details">
+              <div class="detail-row">
+                <span class="detail-label">Direct Email:</span>
+                <a href="mailto:hello@thebeaconforge.com" class="detail-link" id="directEmailLink">hello@thebeaconforge.com</a>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Lead Engineer:</span>
+                <span class="detail-val">Pradeep Achary</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Studio Location:</span>
+                <span class="detail-val">Global delivery &bull; Operating in IST &amp; US hours</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Turnaround:</span>
+                <span class="detail-val">Replies within 1 business day</span>
+              </div>
+            </div>
+
+            <div class="direct-chat-box">
+              <span class="chat-prompt">Prefer instant messaging?</span>
+              <a href="https://api.whatsapp.com/send?text=Hi%20Pradeep,%20I%20would%20like%20to%20discuss%20a%20website%20project%20with%20The%20Beacon%20Forge." target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm">
+                <span>Message on WhatsApp</span>
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                  <path d="M13.6 2.4C12.1.9 10.1 0 8 0 3.6 0 0 3.6 0 8c0 1.4.4 2.8 1.1 4L.1 16l4.2-1.1c1.2.7 2.4 1.1 3.7 1.1 4.4 0 8-3.6 8-8 0-2.1-.8-4.1-2.4-5.6zm-5.6 12.3c-1.2 0-2.4-.3-3.4-.9l-.2-.1-2.5.7.7-2.4-.2-.3c-.7-1-1.1-2.3-1.1-3.6 0-3.7 3-6.7 6.7-6.7 1.8 0 3.5.7 4.7 1.9 1.3 1.3 2 3 2 4.7 0 3.7-3 6.7-6.7 6.7zm3.7-5c-.2-.1-1.2-.6-1.4-.7-.2-.1-.3-.1-.4.1-.1.2-.5.7-.6.8-.1.1-.2.2-.4.1-.2-.1-.9-.3-1.7-1-.6-.5-1-1.2-1.2-1.4-.1-.2 0-.3.1-.4.1-.1.2-.2.3-.3.1-.1.1-.2.2-.3 0-.1 0-.2 0-.3s-.4-1.1-.6-1.5c-.2-.4-.4-.3-.5-.3h-.4c-.1 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.3c.1.2 1.6 2.5 3.9 3.5.5.2 1 .4 1.3.5.6.2 1.1.2 1.5.1.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.2-.2-.2-.4-.3z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-form-wrapper">
+            <form id="contactForm" class="contact-form" action="https://formsubmit.co/hello@thebeaconforge.com" method="POST" novalidate>
+              <input type="hidden" name="_subject" value="New Client Inquiry: The Beacon Forge">
               <input type="hidden" name="_captcha" value="false">
               <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_next" value="https://thebeaconforge.com/#contact">
+              <!-- Anti-spam honeypot field -->
+              <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
 
               <div class="form-row">
-                <div class="form-field">
-                  <label for="clientName">Your Name *</label>
-                  <input type="text" id="clientName" name="name" placeholder="e.g. Marcus Vance" required autocomplete="name">
+                <div class="form-group">
+                  <label for="clientName">Your Name <span class="required">*</span></label>
+                  <input type="text" id="clientName" name="name" required placeholder="e.g. Sarah Jenkins" autocomplete="name" aria-describedby="nameError">
+                  <span class="field-error" id="nameError" role="alert">Please enter your name</span>
                 </div>
-                <div class="form-field">
-                  <label for="clientEmail">Work Email *</label>
-                  <input type="email" id="clientEmail" name="email" placeholder="e.g. marcus@yourcompany.com" required autocomplete="email">
+
+                <div class="form-group">
+                  <label for="clientEmail">Work Email <span class="required">*</span></label>
+                  <input type="email" id="clientEmail" name="email" required placeholder="e.g. sarah@company.com" autocomplete="email" aria-describedby="emailError">
+                  <span class="field-error" id="emailError" role="alert">Please enter a valid email address</span>
                 </div>
               </div>
 
               <div class="form-row">
-                <div class="form-field">
-                  <label for="clientCompany">Company / Existing Website</label>
-                  <input type="text" id="clientCompany" name="company_website" placeholder="e.g. VanceHVAC.com">
+                <div class="form-group">
+                  <label for="projectPackage">Project Tier of Interest</label>
+                  <select id="projectPackage" name="package">
+                    <option value="Essential Website ($1,000)">01: Essential Website ($1,000)</option>
+                    <option value="Professional + CMS ($2,000)" selected>02: Professional + CMS ($2,000)</option>
+                    <option value="Custom Solution">03: Custom Solution (Custom Quote)</option>
+                    <option value="Not Sure / Consultation">Undecided / Exploring Options</option>
+                  </select>
                 </div>
-                <div class="form-field">
-                  <label for="packageSelect">Desired Package *</label>
-                  <select id="packageSelect" name="package_selection" required>
-                    <option value="Essential Website ($1,000)">01 — Essential Website ($1,000 one-time)</option>
-                    <option value="Professional Website + CMS ($2,000)" selected>02 — Professional Website + CMS ($2,000 one-time)</option>
-                    <option value="Custom Solution (Quote)">03 — Custom Flagship Architecture (Quote)</option>
-                    <option value="Care Retainer ($99/mo)">Care Retainer ($99/month)</option>
-                    <option value="Growth Retainer ($249/mo)">Growth Retainer ($249/month)</option>
+
+                <div class="form-group">
+                  <label for="timelineGoal">Target Timeline</label>
+                  <select id="timelineGoal" name="timeline">
+                    <option value="Immediate (Next 2-3 weeks)">Immediate (Next 2-3 weeks)</option>
+                    <option value="Within 1 month" selected>Within 1 month</option>
+                    <option value="Flexible / Planning ahead">Flexible / Planning ahead</option>
                   </select>
                 </div>
               </div>
 
-              <div class="form-field">
-                <label for="projectScope">Project Brief &amp; Goals</label>
-                <textarea id="projectScope" name="project_details" rows="4" placeholder="Briefly describe your business, primary goals (more calls, brand upgrade, faster site), and any ideal launch timeline..."></textarea>
+              <div class="form-group">
+                <label for="projectDetails">Project Details &amp; Goals <span class="required">*</span></label>
+                <textarea id="projectDetails" name="message" rows="4" required placeholder="Tell me a bit about your current website, your business, and what you want to achieve with this project..." aria-describedby="messageError"></textarea>
+                <span class="field-error" id="messageError" role="alert">Please share a few details about your project</span>
               </div>
 
-              <button type="submit" class="btn btn-gold btn-block" id="btnCommissionSubmit">
-                <span>Submit Commission Inquiry</span>
-                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-              </button>
-
-              <div class="form-micro-note">
-                <span>&#128274; Strict Privacy Protection. No spam. Direct communication with your lead engineer.</span>
+              <div class="form-footer">
+                <button type="submit" class="btn btn-primary" id="btnSubmitForm">
+                  <span>Send Inquiry</span>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <path d="M2 8h12M10 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+                <span class="privacy-note">Directly received by Pradeep. No spam, ever.</span>
               </div>
             </form>
 
-            <!-- Success Slate for Form -->
-            <div id="commissionSuccess" class="success-slate" aria-live="polite">
-              <div class="success-badge">&#10003;</div>
-              <h3>Commission Inquiry Dispatched</h3>
-              <p>Your project brief has been routed to <strong>hello@thebeaconforge.com</strong>. Reference token: <span id="commissionToken" class="token-code">#TBF-0000</span>.</p>
-              <p>We review every brief carefully and will reply with initial scoping notes within 24 business hours.</p>
-            </div>
-          </div>
-
-          <!-- Direct Alternative Channels Card -->
-          <div class="channels-card">
-            <div class="channel-block">
-              <span class="channel-kicker">INSTANT CONVERSATION</span>
-              <h4 class="channel-title">Direct WhatsApp Outreach</h4>
-              <p class="channel-desc">Prefer rapid messaging? Connect directly with our team for quick scoping questions and timeline checks.</p>
-              <a href="https://wa.me/?text=Hello%20The%20Beacon%20Forge,%20I%20would%20like%20to%20discuss%20a%20website%20commission." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-block">
-                <span>WhatsApp Click-to-Chat</span>
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.045-2.029-.533-1.685-.698-2.762-2.42-2.846-2.53-.083-.111-.68-0.906-.68-1.728 0-.821.431-1.226.584-1.391.153-.165.333-.207.444-.207.111 0 .222 0 .319.005.105.006.244-.04.382.291.144.348.49 1.196.533 1.284.043.088.072.191.014.306-.058.115-.088.188-.174.289-.086.101-.181.226-.258.303-.087.086-.177.18-.076.353.101.173.449.742.963 1.201.662.591 1.22.774 1.394.861.174.086.277.072.379-.044.102-.116.444-.517.562-.695.118-.178.236-.148.396-.089.16.059 1.017.48 1.191.567.174.087.291.13.334.203.043.072.043.421-.101.826z"/></svg>
-              </a>
-            </div>
-
-            <div class="channel-divider"></div>
-
-            <div class="channel-block">
-              <span class="channel-kicker">EXECUTIVE INQUIRIES</span>
-              <h4 class="channel-title">Direct Executive Email</h4>
-              <p class="channel-desc">Send formal RFPs, custom enterprise specifications, or non-disclosure agreements directly to our leadership desk.</p>
-              <a href="mailto:hello@thebeaconforge.com" class="email-link-box" id="emailContactBox">
-                <span class="email-box-address">hello@thebeaconforge.com</span>
-                <span class="email-box-action">Click to copy</span>
-              </a>
+            <div id="formSuccessSlate" class="form-success-slate" aria-live="polite" hidden>
+              <div class="success-icon">&#10003;</div>
+              <h3 class="success-heading">Message received</h3>
+              <p class="success-message">Thank you for reaching out. I have received your project details and will review them and follow up within 24 business hours.</p>
+              <button type="button" class="btn btn-ghost btn-sm" id="btnResetForm">Send another note</button>
             </div>
           </div>
 
@@ -529,65 +499,61 @@
 
     </main>
 
-    <!-- Bottom Footer / Colophon Bar -->
+    <!-- Colophon / Footer -->
     <footer class="colophon-bar">
-      <div class="colophon-left">
-        <span>&copy; 2026 THE BEACON FORGE</span>
-        <span class="divider">&bull;</span>
-        <a href="mailto:hello@thebeaconforge.com" class="email-link" id="emailContactLink" title="Click to copy">
-          hello@thebeaconforge.com
-        </a>
-        <span class="divider">&bull;</span>
-        <button id="btnOpenPrivacy" class="legal-link-btn">Privacy &amp; Compliance</button>
-      </div>
+      <div class="container colophon-inner">
+        <div class="colophon-brand">
+          <span>&copy; 2026 The Beacon Forge</span>
+          <span class="separator">&bull;</span>
+          <span class="colophon-author">Crafted by Pradeep Achary</span>
+        </div>
 
-      <div class="colophon-right">
-        <span>AUSTIN &bull; LONDON &bull; GLOBAL</span>
-        <span class="divider">&bull;</span>
-        <button id="soundToggle" class="sound-btn" aria-label="Toggle acoustics">
-          <span class="sound-label">SOUND: OFF</span>
-        </button>
+        <div class="colophon-links">
+          <a href="mailto:hello@thebeaconforge.com" class="colophon-email" id="footerEmailLink" title="Click to copy email">hello@thebeaconforge.com</a>
+          <span class="separator">&bull;</span>
+          <button type="button" id="btnOpenPrivacy" class="legal-link-btn">Privacy &amp; Data Governance</button>
+        </div>
       </div>
     </footer>
 
   </div>
 
-  <!-- MODAL: Privacy & Legal Compliance Charter -->
+  <!-- Privacy & Compliance Modal -->
   <div class="modal-overlay" id="privacyModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="privacyTitle">
     <div class="modal-backdrop" id="privacyBackdrop"></div>
     <div class="modal-container">
-      <button class="modal-close" id="btnClosePrivacy" aria-label="Close modal">&times;</button>
+      <button type="button" class="modal-close" id="btnClosePrivacy" aria-label="Close modal">&times;</button>
 
       <div class="modal-header">
-        <span class="kicker">LEGAL &amp; PRIVACY CHARTER</span>
-        <h3 id="privacyTitle">Data Governance &amp; Compliance</h3>
-        <p>The Beacon Forge operates under international digital standards.</p>
+        <span class="modal-kicker">Data Governance</span>
+        <h3 id="privacyTitle">Privacy &amp; Compliance Charter</h3>
+        <p class="modal-subtitle">The Beacon Forge practices strict data protection across international standards.</p>
       </div>
 
-      <div class="privacy-body">
+      <div class="modal-body">
         <div class="legal-section">
-          <h4>I. Digital Personal Data Protection (DPDP Act — India)</h4>
-          <p>We collect executive contact information exclusively for project evaluation and commercial commissioning. Your data is stored securely and never transferred, sold, or rented to third-party data brokers.</p>
+          <h4>1. Digital Personal Data Protection (DPDP Act)</h4>
+          <p>We collect executive contact information strictly for client project evaluation and proposal correspondence. Your contact data is never shared, rented, or sold to third-party brokers or aggregators.</p>
         </div>
 
         <div class="legal-section">
-          <h4>II. US CAN-SPAM Act &amp; B2B Communications</h4>
-          <p>All outbound communications comply strictly with CAN-SPAM requirements: transparent sender identity (hello@thebeaconforge.com), clear subject headers, valid commercial mailing information, and instantaneous 1-click unsubscribe mechanisms.</p>
+          <h4>2. US CAN-SPAM Act Compliance</h4>
+          <p>All direct communications use authentic sender identity (hello@thebeaconforge.com), clear subject headers, and accurate commercial information. We do not engage in automated cold spam blasts.</p>
         </div>
 
         <div class="legal-section">
-          <h4>III. GDPR &amp; UK PECR Standards</h4>
-          <p>Under European General Data Protection Regulation principles, data subjects retain the right to data access, rectification, and complete erasure upon request via hello@thebeaconforge.com.</p>
+          <h4>3. GDPR &amp; UK PECR Standards</h4>
+          <p>You maintain full rights to inspect, update, or permanently delete any stored correspondence records. Contact hello@thebeaconforge.com at any time to request data removal.</p>
         </div>
       </div>
 
       <div class="modal-footer">
-        <button class="btn btn-gold btn-block" id="btnClosePrivacyBtn">Acknowledge &amp; Close</button>
+        <button type="button" class="btn btn-secondary btn-block" id="btnClosePrivacyBtn">Acknowledge &amp; Close</button>
       </div>
     </div>
   </div>
 
-  <!-- Toast Notification Container -->
+  <!-- Toast Notification -->
   <div class="toast-container" id="toastContainer" aria-live="polite"></div>
 
   <script src="script.js?v=6"></script>
